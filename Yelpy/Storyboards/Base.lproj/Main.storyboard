@@ -89,12 +89,17 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="lPm-hs-plm" firstAttribute="leading" secondItem="BkH-a5-eu8" secondAttribute="trailing" constant="8" symbolic="YES" id="8Ah-PP-ak3"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="BkH-a5-eu8" firstAttribute="leading" secondItem="qfA-ys-fGZ" secondAttribute="leading" constant="28" id="AyW-Xm-oFS"/>
                                                 <constraint firstItem="8vP-7J-C5A" firstAttribute="top" secondItem="qfA-ys-fGZ" secondAttribute="top" constant="11" id="DSG-4P-CJv"/>
                                                 <constraint firstAttribute="bottom" secondItem="8vP-7J-C5A" secondAttribute="bottom" constant="11" id="Lrp-bd-NB5"/>
                                                 <constraint firstAttribute="trailing" secondItem="8vP-7J-C5A" secondAttribute="trailing" constant="24" id="M0x-pp-5Wd"/>
+                                                <constraint firstAttribute="trailing" secondItem="lPm-hs-plm" secondAttribute="trailing" constant="24" id="Qay-e7-Gkr"/>
                                                 <constraint firstItem="8vP-7J-C5A" firstAttribute="leading" secondItem="qfA-ys-fGZ" secondAttribute="leading" constant="28" id="gwd-fR-xQq"/>
                                             </constraints>
                                         </tableViewCellContentView>
