@@ -8,8 +8,11 @@
 
 import UIKit
 import AlamofireImage
+import Lottie
 
 class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var animationView: AnimationView?
         
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +25,11 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var searchBar: UISearchBar!
     var filteredRestaurants: [Restaurant] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        // Animation Call
+        startAnimations()
+        stopAnimations()
+    }
     
     
     // ––––– TODO: Add searchController configurations
@@ -39,8 +47,47 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         // Get Data from API
         getAPIData()
         
+        
+        
         tableView.rowHeight = 150
     }
+    
+    
+    func startAnimations() {
+        animationView = .init(name: "99276-loading-utensils")
+        
+        // Set frame size
+        animationView!.frame = CGRect(x: -32, y: 200, width: 500, height: 500)
+        
+        // Fit the animation
+        animationView!.contentMode = .scaleAspectFit
+        view.addSubview(animationView!)
+        
+        // Set animation loop mode
+        animationView!.loopMode = .loop
+        
+        // Set animation speed
+        animationView?.animationSpeed = 1
+        
+        // Play animation
+        animationView!.play()
+    }
+    
+    @objc func stopAnimations() {
+        // Delay Stop
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            // Stop Animation
+            self.animationView?.stop()
+            
+            // Change subview to last and remove the current subview
+            self.view.subviews.last?.removeFromSuperview()
+        }
+            
+    }
+    
+    
+    
+    
     
     
     // ––––– TODO: Update API results + restaurantsArray Variable + filteredRestaurants
