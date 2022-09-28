@@ -38,6 +38,8 @@ class RestaurantsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Get Data from API
         getAPIData()
+        
+        tableView.rowHeight = 150
     }
     
     
