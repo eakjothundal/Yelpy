@@ -1,6 +1,6 @@
 # Yelpy
 
-Using Yelp API to pull and display restaurants in different screens and forms, such as a maps tab. Users will be able to chat inside the application.
+A basic Yelp restaurant viewer with a chat feature using the Yelp API.
 
 Time spent: **8** hours spent in total
 
