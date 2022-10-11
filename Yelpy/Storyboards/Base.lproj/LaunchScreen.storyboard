@@ -17,18 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yelpy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR4-rF-LLq">
-                                <rect key="frame" x="152" y="424" width="110.5" height="62.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="52"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelp_launch" translatesAutoresizingMaskIntoConstraints="NO" id="fh1-y6-wZp">
+                                <rect key="frame" x="30" y="136.5" width="354" height="623"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hR4-rF-LLq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RlE-Em-L9f"/>
-                            <constraint firstItem="hR4-rF-LLq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="bpe-sJ-vhZ"/>
+                            <constraint firstItem="fh1-y6-wZp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="PQL-le-NUe"/>
+                            <constraint firstAttribute="trailing" secondItem="fh1-y6-wZp" secondAttribute="trailing" constant="30" id="XFX-92-mrE"/>
+                            <constraint firstItem="fh1-y6-wZp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="roS-Ke-WJV"/>
+                            <constraint firstItem="fh1-y6-wZp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="30" id="wTp-wU-rqr"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +37,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="yelp_launch" width="1280" height="623"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
