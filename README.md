@@ -15,7 +15,7 @@ The following **required** functionality is completed:
 - [ ] User can chat within the application to compose and send a message.
 
 The following **bonus** features are implemented:
-- [ ] User can pull to refresh on home screen.
+- [x] User can pull to refresh on home screen.
 - [ ] When application is launching, user sees an animation.
 - [ ] User can view application is both orientations.
 - [ ] User can pull to refresh on chat feed.
