@@ -21,7 +21,7 @@ class ChatViewController: UIViewController {
     
     
     // ––––– LAB 5 TODO: CREATE ARRAY FOR MESSAGES
-    var messages: [[String: Any]] = []
+    var messages: [PFObject] = []
     
     // ––––– LAB 5 TODO: CREATE CHAT MESSAGE OBJECT
    
@@ -53,7 +53,20 @@ class ChatViewController: UIViewController {
     
     //  ––––– LAB 5 TODO: SEND MESSAGE TO SERVER AFTER onSend IS CLICKED
     @IBAction func onSend(_ sender: Any) {
-       
+        let chatMessage = PFObject(className: "Message")
+        
+        chatMessage["text"] = messageTextField.text ?? ""
+        
+        chatMessage.saveInBackground { (success, error) in
+           if success {
+               print("The message (\(self.messageTextField.text!)) was saved!")
+               self.messageTextField.text = ""
+           } else if let error = error {
+              print("Problem saving message: \(error.localizedDescription)")
+           }
+        }
+
+
     }
     
     
