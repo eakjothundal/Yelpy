@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    // ––––– Lab 5 TODO: Initialize Parse
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+       
+        
+
         return true
     }
+    
+
+    
+
+    
 
     // MARK: UISceneSession Lifecycle
 
