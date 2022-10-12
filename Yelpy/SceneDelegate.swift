@@ -23,7 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
     
-        // Add event listener for when user logs out
+        // Add event listener for when user logs in
+        NotificationCenter.default.addObserver(forName: Notification.Name("login"), object: nil, queue: OperationQueue.main) { (Notification) in
+            print("Logout notification received")
+            
+            // Load and show Login view controller
+            self.login()
+        }
 
         
         // Add event listener for when user logs out
@@ -37,6 +43,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     // ––––– Lab 5 TODO: LOGIN USER
+    func login() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "TabBar")
+    }
 
     
     // ––––– Lab 5 TODO: LOGOUT USER

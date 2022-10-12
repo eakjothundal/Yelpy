@@ -29,16 +29,28 @@ class LoginViewController: UIViewController {
     @IBAction func onSignUp(_ sender: Any) {
         // Sign up user
         // Check text field inputs
-       
+        if usernameAndPasswordNotEmpty() {
             // initialize a user object
-          
+            let newUser = PFUser()
             
             // set user properties
-         
+            newUser.username = usernameTextField.text
+            newUser.password = passwordTextField.text
             
             // call sign up function on the object
-        
-        
+            newUser.signUpInBackground { (success, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    self.displaySignupError(error: error)
+                } else {
+                    print("User \(newUser.username!) registered!")
+                    NotificationCenter.default.post(name: NSNotification.Name("login"), object: nil)
+                }
+            }
+            
+        } else {
+            print("Username and/or password is empty")
+        }
         
     }
     
@@ -46,8 +58,27 @@ class LoginViewController: UIViewController {
     // ––––– LAB 5 TODO: LOGIN FUNCTIONALITY
     @IBAction func onLogin(_ sender: Any) {
         // Login user
-    
         
+        // Check text field inputs
+        if usernameAndPasswordNotEmpty() {
+            // set user properties
+            let username = usernameTextField.text
+            let password = passwordTextField.text!
+            
+            // call sign up function on the object
+            PFUser.logInWithUsername(inBackground: username!, password: password) { (user: PFUser?, error: Error?) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    self.displaySignupError(error: error)
+                } else {
+                    print("User \(username!) logged in!") 
+                    NotificationCenter.default.post(name: NSNotification.Name("login"), object: nil)
+                }
+            }
+            
+        } else {
+            print("Username and/or password is empty")
+        }
     }
     
     
@@ -55,7 +86,7 @@ class LoginViewController: UIViewController {
     
     /*------ Handle text field inputs  ------*/
     func usernameAndPasswordNotEmpty() -> Bool {
-        return usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty
+        return !usernameTextField.text!.isEmpty && !passwordTextField.text!.isEmpty
     }
     
     /*------ Alert Controllers ------*/
