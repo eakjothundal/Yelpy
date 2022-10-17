@@ -2,8 +2,6 @@
 
 A basic Yelp restaurant viewer with a chat feature using the Yelp API.
 
-Time spent: **8** hours spent in total
-
 ## User Stories
 
 The following **required** functionality is completed:
